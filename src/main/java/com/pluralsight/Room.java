@@ -33,4 +33,32 @@ public class Room {
     public double getPrice() {
         return price;
     }
+
+    public void checkIn(){
+        isDirty = true;
+        isOccupied = true;
+    }
+
+    public void checkOut(){
+        isOccupied = false;
+    }
+
+    public void cleanroom(){
+        if (!isOccupied){
+            isDirty = false;
+            isAvailable = true;
+        } else {
+            System.out.println("Room Occupied");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Room:\n" +
+                "Available = " + isAvailable +
+                "\nnumberOfBeds = " + numberOfBeds +
+                "\nprice = " + price +
+                "\nisOccupied = " + isOccupied +
+                "\nisDirty = " + isDirty;
+    }
 }
