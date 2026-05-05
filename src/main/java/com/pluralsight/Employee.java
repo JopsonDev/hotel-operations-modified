@@ -55,8 +55,11 @@ public class Employee {
         System.out.print("Punch Out Time (14 for 2:00pm): ");
         int outTime = scanner.nextInt();
         scanner.nextLine();
-
+        if (inTime >= outTime){
+            outTime += 24;
+        }
         double workedTime = outTime - inTime;
+
 
         System.out.println("In: " + inTime +"\nOut: " + outTime + "\nHours Worked: " + workedTime);
 
